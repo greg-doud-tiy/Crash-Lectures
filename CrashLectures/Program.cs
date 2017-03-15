@@ -39,6 +39,8 @@ namespace CrashLectures {
 				// more specific exceptions should be caught first
 				// this catches any exception other than the others caught
 				System.Diagnostics.Debug.WriteLine(ex.Message);
+			} finally {
+				// this block always executes
 			}
 			// program continues gracefully
 			System.Diagnostics.Debug.WriteLine("Done...");
