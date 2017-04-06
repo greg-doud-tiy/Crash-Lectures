@@ -6,6 +6,24 @@ using System.Threading.Tasks;
 
 namespace CrashLectures {
 	class Program {
+
+		class nameType {
+			public string first;
+			public string last;
+		}
+
+		void ConcatenateStringsUsingLinq() {
+			List<nameType> ns = new List<nameType>() {
+				new nameType() { first = "Greg", last = "Doud" },
+				new nameType() { first = "cindy",  last = "doud" },
+				new nameType() { first = "nick",  last = "doud" },
+				new nameType() { first = "ken",  last = "doud" }
+			};
+			var greg = from n in ns
+					   where n.first == "Greg"
+					   select new { full = n.first + " " + n.last };
+			
+		}
 		/// <summary>
 		/// Whenever any operation is capable of throwing an Exception, it is good programming 
 		/// practice to handle the exception gracefully even if there is nothing that can be done 
@@ -105,7 +123,8 @@ namespace CrashLectures {
 		static void Main(string[] args) {
 			Program pgm = new Program();
 			//pgm.ImplementingCustomCollections();
-			pgm.UsingTriCatchBlocks();
+			//pgm.UsingTriCatchBlocks();
+			pgm.ConcatenateStringsUsingLinq();
 		}
 	}
 }
